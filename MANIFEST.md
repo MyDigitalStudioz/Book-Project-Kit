@@ -1,6 +1,6 @@
 # Book Project Kit — Manifest
 
-Version **1.1.0** · Assembled 2026-11-20 (Pass 2 harvest added the same day) · Proven on *Harlow's Accidental Journey* (Book 1) and *Harlow's Helping Paws* (Book 2)
+Version **1.2.0** · Assembled 2026-11-20 (Pass 2 harvest + starter project added the same day) · Proven on *Harlow's Accidental Journey* (Book 1) and *Harlow's Helping Paws* (Book 2)
 
 One index of every component in the system, where its canonical copy lives, and what it's for. The kit has two homes that mirror each other: this repo (code + specs) and the **Book Project Kit** folder in Google Drive (the document side). The master Playbook's canonical copy is the Google Doc; a copy rides in the Drive kit folder.
 
@@ -40,9 +40,10 @@ One index of every component in the system, where its canonical copy lives, and 
 ## Templates (templates/)
 | Path | What it is |
 |---|---|
+| **starter-project/** | **THE SCAFFOLD — copy this whole folder to start a book.** Bare-bones working project: skeleton showcase + spread review V1 + one-book flipbook on labeled placeholder art, Lulu specs carried in-project (PRINT-SPECS.md), generic storage prefix (`bookproj-`). Probed end-to-end before shipping; its README lists the make-it-yours steps in order. |
 | repo/index.html | Showcase page — reference implementation (HHP) |
 | repo/spread-options-v1.html | Spread review page — reference implementation (HHP) |
-| flipbook/ | The BookVizion bookshelf build (two-book capable, top-bar icon fix included) + preview images + manifest |
+| flipbook/ | The COMPLETE BookVizion bookshelf build (two-book capable, top-bar icon fix included) + preview images + manifest + `vendor/` + `icons/` + `manifest.webmanifest` — the support files are part of the build; the app 404s without them |
 | CHARACTER-RECIPE-TEMPLATE.md | Per-character recipe skeleton with the standing §5 look + background standard |
 | ANNOUNCEMENT-EMAIL-TEMPLATE.md | The launch email (Jon's Book 1 wording, generalized): links, honest cost breakdown, flipbook twin |
 | TEMPLATING-NOTES.md | Every per-book variable in the templates, marked |

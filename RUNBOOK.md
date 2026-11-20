@@ -19,9 +19,10 @@ Create the folder tree exactly per **docs/DRIVE-TREE-SPEC.md**. Write the START-
 - Working branch: `<repo-slug>-v1`. **Branch policy: work happens on the working branch; `main` is the Pages/shipping line; merges happen on Jon's go.** Never assume the default branch is the working line.
 - Repo settings per the standing template lock: description, 3–5 topics, labels (GitHub defaults + `blocked` + `needs-jon`), `.nojekyll`. Badges are shields.io only — never hand-made SVGs.
 - Seed `docs/STORY-VERSIONS.md` (version tracker: drafts, dates, where each lives).
+- **Copy `templates/starter-project/` in as the project root** — the working skeleton (showcase + spread review V1 + one-book flipbook on placeholder art, PRINT-SPECS.md aboard) — then follow the starter README's make-it-yours steps: title/author, project-unique storage-prefix slug, placeholder swaps. Steps 3–4 below then become grow-and-replace passes instead of builds from scratch.
 
 ## Step 3 — Flipbook (bookshelf)
-- Copy `templates/flipbook/` into the repo at `flipbook/`.
+- Copy `templates/flipbook/` into the repo at `flipbook/` — the WHOLE build, `vendor/` + `icons/` + `manifest.webmanifest` included. (The starter project's flipbook is this same build reduced to one book; a from-scratch project can start there instead and grow the shelf.)
 - Set `images/manifest.js` to the new book (cover + about placeholders until art locks) and the CATALOG to this book only — then import prior series books as contained shelf books (pages under `flipbook/shelf/<slug>/`, catalog id = the book's slug, `source: "built-in"`, `textBaked: true`, text + info carried from the book's final manifest).
 - Set the `#shelfShowcase` href to the new showcase URL; set a project-unique storage-key prefix.
 - **Port gate (mandatory, every flipbook change):** byte census of the change; cold-boot behavior probe in Chromium AND WebKit against the exact bytes (shelf renders, every book opens and turns a page, deep links boot, error set = baseline only); push; re-verify the LIVE bytes (md5) after the merge. A failed probe stops the ship.

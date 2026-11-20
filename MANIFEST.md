@@ -1,6 +1,6 @@
 # Book Project Kit — Manifest
 
-Version **1.0.0** · Assembled 2026-11-20 · Proven on *Harlow's Accidental Journey* (Book 1) and *Harlow's Helping Paws* (Book 2)
+Version **1.1.0** · Assembled 2026-11-20 (Pass 2 harvest added the same day) · Proven on *Harlow's Accidental Journey* (Book 1) and *Harlow's Helping Paws* (Book 2)
 
 One index of every component in the system, where its canonical copy lives, and what it's for. The kit has two homes that mirror each other: this repo (code + specs) and the **Book Project Kit** folder in Google Drive (the document side). The master Playbook's canonical copy is the Google Doc; a copy rides in the Drive kit folder.
 
@@ -23,6 +23,19 @@ One index of every component in the system, where its canonical copy lives, and 
 | CHARACTER-BOARD-STANDARD.md | Character Board format, grid lock, dress lock, footer line |
 | DASHBOARD-SPEC.md | The per-book Muse dashboard: sections, actions, data rules |
 | DRIVE-TREE-SPEC.md | The Drive homebase folder tree + manuscript rules |
+| SPREAD-OPTIONS-SYSTEM.md | The system behind the final-pass / spread-options review pages (from the Book 1 repo) |
+| REVIEW-CHECKLIST.md | The book-desk review pass checklist |
+| TYPESET-STYLE-CARD.md | Typesetting style card for interior text |
+| TEXT-PASS-CHECKLIST.md | Post-text-pass verification checklist (text of record discipline) |
+| PHYSICAL-MOCKUP-SPEC.md | The bound-book mockup viewer: leaf order, flyleaves, turn checks |
+| HIRES-PIPELINE.md | Print masters: AI-upscale route, byte-exact handling, md5 manifest rule |
+| PRINT-SPEC-PACK.md | The full print specification pack behind the LULU-SPECS quick card |
+| LULU-RUN-CHECKLIST.md | The Lulu publishing run, step by step |
+| LULU-RUN-KNOWLEDGE.md | Hard-won Lulu knowledge from the Book 1 run |
+| LULU-PROJECT-SHEET-EXAMPLE.md | A filled Lulu project sheet (Book 1 hardcover) — the pattern for per-book sheets |
+| PROOF-ORDER-CHECKLIST.md | Ordering and checking printed proofs |
+| PAGE-POLISH.md | Share-preview leanness, cache-busting, screenshot discipline for project pages |
+| PUBLISH-GATE.md | The four-part pre-publish diff + one-source-of-truth rule |
 
 ## Templates (templates/)
 | Path | What it is |
@@ -31,7 +44,17 @@ One index of every component in the system, where its canonical copy lives, and 
 | repo/spread-options-v1.html | Spread review page — reference implementation (HHP) |
 | flipbook/ | The BookVizion bookshelf build (two-book capable, top-bar icon fix included) + preview images + manifest |
 | CHARACTER-RECIPE-TEMPLATE.md | Per-character recipe skeleton with the standing §5 look + background standard |
+| ANNOUNCEMENT-EMAIL-TEMPLATE.md | The launch email (Jon's Book 1 wording, generalized): links, honest cost breakdown, flipbook twin |
 | TEMPLATING-NOTES.md | Every per-book variable in the templates, marked |
+
+## Referenced, not copied (living homes elsewhere)
+| Component | Where it lives | Why it's a pointer, not a copy |
+|---|---|---|
+| BookVizion Admin app | `BookVizion-Admin` repo (hPanel deploy lane) | A living app with its own deploy discipline; the kit's flipbook is its data source |
+| Book 1 final-pass pages | https://mydigitalstudioz.github.io/Harlows-Accidental-Journey/final-pass-v12.html | The review pages' ancestor implementation — the method is in SPREAD-OPTIONS-SYSTEM.md; the file itself is Book 1's frozen record |
+| Sales & pricing picture | Book 1 desk files (HARLOW-SALES-AND-PRICING-PICTURE, SALES-LANES-PREP) | Business-side planning, partly superseded per book; the Playbook carries the durable parts |
+| Gradient fade technique | Book 1 desk file GRADIENT-FADE-SPEC | A single layout technique, referenced from the build bible's world |
+| START-HERE worked example | The HHP Drive homebase | DRIVE-TREE-SPEC states the pattern; HHP's folder is the living example |
 
 ## Standing rules that travel with the kit
 - Bookshelf over links: series books live contained on the shelf, never linked out to another project.

@@ -43,9 +43,13 @@ Build the Muse dashboard from **docs/DASHBOARD-SPEC.md** in one pass — section
 
 ## Step 7 — Production (the part that stays human)
 Story, author wording passes, cast locks, spread art — per **docs/BOOK-BUILD-BIBLE.md** and **docs/MASTER-PROCESS.md**. Standing commands from the Book 1 desk carry over: "Build new book" (local only) / "Patch book" / "Publish book" / "Flipbook: \<name\>" — see docs/BUILD-NEW-BOOK-SPEC.md and docs/FLIPBOOK-COMMAND-SPEC.md.
+- Review passes run on **docs/REVIEW-CHECKLIST.md** + the spread-options system (**docs/SPREAD-OPTIONS-SYSTEM.md**); interior text follows **docs/TYPESET-STYLE-CARD.md** and is verified with **docs/TEXT-PASS-CHECKLIST.md**.
+- Print masters are made and moved per **docs/HIRES-PIPELINE.md** (AI upscale only; md5 manifest on every set).
+- Optional but recommended before ordering proofs: build the **physical mockup viewer** per **docs/PHYSICAL-MOCKUP-SPEC.md** — the bound-book reading experience, proofed on screen.
+- Every page publish follows **docs/PAGE-POLISH.md** and the **docs/PUBLISH-GATE.md** four-part diff.
 
 ## Step 8 — Print (Lulu)
-Covers designed on Lulu geometry from day one per **docs/COVER-START-SPEC.md** + **docs/LULU-SPECS.md** (Matte locked). Only the spine band moves when the real template returns.
+Covers designed on Lulu geometry from day one per **docs/COVER-START-SPEC.md** + **docs/LULU-SPECS.md** (Matte locked; full pack: **docs/PRINT-SPEC-PACK.md**). Only the spine band moves when the real template returns. The run itself follows **docs/LULU-RUN-CHECKLIST.md** with **docs/LULU-RUN-KNOWLEDGE.md** open beside it; open a per-book project sheet on the pattern of **docs/LULU-PROJECT-SHEET-EXAMPLE.md**. Proofs are ordered and checked per **docs/PROOF-ORDER-CHECKLIST.md**. At go-live, send the announcement from **templates/ANNOUNCEMENT-EMAIL-TEMPLATE.md**.
 
 ## Handoff checklist (what "done scaffolding" means)
 - [ ] Drive homebase + START-HERE + shared inbox

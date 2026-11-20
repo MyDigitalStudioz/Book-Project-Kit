@@ -4,7 +4,7 @@
 
 **Branch policy:** work happens on the latest *-vN / project branch. List branches before editing. Never assume the GitHub default is the working line. Working line: book-project-kit-v1 (GitHub default is main).
 
-![Version](https://img.shields.io/badge/version-1.2.1-orange) ![Last commit](https://img.shields.io/github/last-commit/MyDigitalStudioz/Book-Project-Kit) ![Repo size](https://img.shields.io/github/repo-size/MyDigitalStudioz/Book-Project-Kit) ![Site](https://img.shields.io/badge/site-static-blue)
+![Version](https://img.shields.io/badge/version-1.2.2-orange) ![Last commit](https://img.shields.io/github/last-commit/MyDigitalStudioz/Book-Project-Kit) ![Repo size](https://img.shields.io/github/repo-size/MyDigitalStudioz/Book-Project-Kit) ![Site](https://img.shields.io/badge/site-static-blue)
 
 ## The one command
 

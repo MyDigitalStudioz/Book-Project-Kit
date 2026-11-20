@@ -1,6 +1,6 @@
 # Book Project Kit — Manifest
 
-Version **1.2.0** · Assembled 2026-11-20 (Pass 2 harvest + starter project added the same day) · Proven on *Harlow's Accidental Journey* (Book 1) and *Harlow's Helping Paws* (Book 2)
+Version **1.2.1** · Assembled 2026-11-20 (Pass 2 harvest + starter project added the same day) · 1.2.1 refinement pass 2026-11-20: board pre-flight self-check + likeness governance folded back from the live Book 2 board rebuild · Proven on *Harlow's Accidental Journey* (Book 1) and *Harlow's Helping Paws* (Book 2)
 
 One index of every component in the system, where its canonical copy lives, and what it's for. The kit has two homes that mirror each other: this repo (code + specs) and the **Book Project Kit** folder in Google Drive (the document side). The master Playbook's canonical copy is the Google Doc; a copy rides in the Drive kit folder.
 
@@ -64,3 +64,4 @@ One index of every component in the system, where its canonical copy lives, and 
 - "Hi-res" means a real AI upscale — never a plain resize.
 - Review pages are frozen snapshots; the flipbook is always current.
 - The author's manuscript file is the manuscript of record; the author's side stays light.
+- **Kit currency (Jon, 2026-11-20):** when a live project teaches a refinement — a new gate, a corrected method, a failure turned into a rule — fold it back into the kit's docs the same session, bump the patch version, and note the source project. The kit must never lag the desks; a stale kit is how the next book regenerates the wrong boards.

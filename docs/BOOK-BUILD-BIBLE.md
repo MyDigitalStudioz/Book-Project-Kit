@@ -173,6 +173,31 @@ The flipbook18.html freeze was lifted 2026-11-01. Lois views gold pages. Do not 
 - **Curated shelf order:** the catalog order is the shipped default and is curated (the producer sets which book leads). A per-device saved arrangement (the reader's own rearrange controls) still wins on that device, by design — never mistake a device-local order for the shipped default, and never "fix" the catalog to match one device.
 - **Spread-view pattern (`flatPairs`):** a spread book that must also read page-wise in portrait registers as half-pages (each spread split at its center seam) with a flag that pads the pairing at runtime. Runtime blanks belong at the **back only**, as the endpaper. **The front slot is a real cover page, never a blank** — a book opens on its cover, and page 1 is a real page a reader can page back to. (The first build padded the front with a blank and stepped past it on open; paging back landed on a blank "Page 1" — the defect this rule exists to prevent.)
 
+
+**Book openings (added 2026-11-21, kit v1.2.5, from the Book 2 shelf):**
+
+- **Universal shelf-book flow:** every book on the shelf follows the series' first book — **front cover → blank flyleaf → content → blank flyleaf → back cover.** The flyleaf art is the series' own flyleaf file (a plain page), byte-identical copies in every book that uses it, captioned "Flyleaf". A book with no flyleaves reads as unfinished next to its shelf-mates.
+- **The title-page opening:** every book opens **cover → flyleaf → TITLE → content.** The title page is typeset in the book family's serif voice on its cream paper, framed by a double rule, and its small line says what that version IS (each shelf version — story, spread mockup, story & text — carries its own format line). **The © lines sit at the FOOT of the title page — there is no standalone copyright page and no copyright verso;** front-matter parity is kept by pairing the title with the flyleaf in front and balancing flyleafs at the back. A paginated book's content starts on the **left** of the first content spread. Insert front matter in PAIRS in a paginated book, and shift any index-keyed maps (fills, below) with the pages.
+- **Parity changes are the owner's call:** when a parity change moves content across a spread seam, check which designed pairs it splits (e.g. a left start can force a facing panel pair apart in landscape) and put the trade to the owner BEFORE building — they may take the split or keep the pair.
+- **`flatPairs` front matter:** a flatPairs book takes **NO separate flyleaf spread in front of its title spread** — the title spread's blank left half IS the flyleaf (one blank flip before the title, the same rhythm as the paginated books). Insertions ahead of a flatPairs book's halves must be **spread-width (an even count of slots)** to preserve pairing.
+- **The runtime endpaper is a pair-completer, not a page:** pad a flatPairs book only when its own page count is EVEN; a book that ends on a real back cover (odd count) completes its last pair by itself and gets no blank after it. When a book gains a back cover, give it the endpaper's slot, so the counter total and every stored per-page position on readers' devices stay put.
+
+**Text pages and leaf pairing (added 2026-11-21, kit v1.2.5):**
+
+- **The text-page pattern:** a storybook version can carry the story's words as **rendered typeset page images** — one page per passage, the FULL passage auto-fit to one square page (never trimmed), cream paper in the book's palette, the book family's serif voice in warm ink, generous margins, a small paw mark at the foot. A split-panel illustration splits its passage at the panel break — each panel's facing text page carries its half.
+- **Leaf-pairing arithmetic:** couples that must FACE each other (art ↔ its text page, portrait ↔ full body) start at an **odd 0-based index** in a viewer that pairs leaves as (odd, even). A book that opens cover → flyleaf → couples therefore **doubles the front flyleaf** rather than breaking the pairing or gluing the back cover into the last spread; the back cover stands alone like every other book's.
+
+**Fill treatments for placeholder art (added 2026-11-21, kit v1.2.5):**
+
+- Placeholder art often sits inside baked-in bands/pillars. A per-book **`fill` map** (`{pageIndex: [scale, originX%, originY%]}`) zooms those pages so the art fills the page frame. **Display-only — never baked into the page files, never carried to print.**
+- **Scales are measured, never guessed:** scan each file's actual band extents; scale = frame ÷ art extent with a small uniform overshoot; origin at the art's center. Spread pairs get ONE seam-anchored scale per spread (left halves origin-x 100%, right halves 0%), measured from the halves' pillar boundaries; where a detector catches an interior edge first, verify the boundary by eye against its pair.
+- **Scan BOTH axes — all four edges.** A page can be full-bleed on one axis and banded on the other; a one-axis scan classifies it "full-bleed" and ships the bars. The one uniform fill scale must satisfy both axes.
+- **Apply the fill at EVERY reader surface:** static bases, the DOM sheet faces, the magazine leaf layers, the canvas leaf (sliced from the same fill window, so the flying leaf shows the filled art), scroll view, and zoom — filled pages get a clipping wrapper in zoom so the zoom shows the filled window, not the whole file scaled. Covers and flyleaves carry no fill.
+
+**Thumbnail-store versioning (added 2026-11-21, kit v1.2.5):**
+
+- Shelf thumbnails generated from cover art and persisted on the device (IndexedDB), validated by the cover's PATH alone, survive an in-place byte swap forever — the reader fetches the new cover fresh while the tile shows the old art indefinitely, and fresh-profile probes will never see it. **Version the thumb store with the cover art: bump the store's version constant in the same change as any in-place cover-art swap,** so every device discards its stored thumbs once and regenerates them. Gate the fix with a **seeded stale-state profile** (the pre-swap world persisted), not a fresh profile — fresh profiles pass while real devices stay stale.
+
 ---
 
 ## 7. File architecture

@@ -2,6 +2,8 @@
 
 A working, bare-bones book project: showcase + spread review + 3D flipbook, wired together and running on placeholder art. Everything functions — menus, bookshelf, page turns, review lightbox with Lulu/seam guides — before a single real page exists.
 
+The placeholder book follows the kit's universal shelf-book flow (BOOK-BUILD-BIBLE §6, kit v1.2.5): **front cover → flyleaf → title page → content → flyleaf → back cover**, with the © lines at the title page's foot — no standalone copyright page. Replace the placeholder flyleaf/title pages with your own typeset versions in the same slots.
+
 ## What's inside
 | Path | What it is |
 |---|---|

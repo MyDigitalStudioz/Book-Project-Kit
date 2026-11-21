@@ -119,6 +119,32 @@ The review lightbox carries two independent guide toggles, inherited from Book 1
 - **Lulu guide:** taken from the flipbook viewer's own print spec — trim at the page edge, safety frame at 0.5 in (5.88% inset on the square page).
 - A **shared page-settings panel** (guides + captions) sits over the review pages, with settings **persisted per device** — the author sets her guides once and they stay set.
 
+## Lightbox backdrop + overlay family (added 2026-11-21, kit v1.2.5 — from Book 2's review pages)
+
+- **A lightbox/modal backdrop is `position: fixed` + `inset: 0` with `height: auto`** — both edges anchored, NEVER an explicit vh/dvh height on the overlay box: when top, bottom AND height are all set, the height wins, the bottom anchor is ignored, and the backdrop inherits every viewport-unit under-measurement (on mobile browsers `100dvh` can under-measure the fixed containing block by roughly the chrome height, leaving an undimmed strip at the bottom). Viewport units are safe only as a **max-height CAP on inner content**, where under-measurement fails safe (the content renders a touch smaller and still fits).
+- **The rule covers the whole overlay family** — lightbox, settings-drawer scrim, and the drawer itself all anchor both edges with `height: auto` (a drawer anchored at top only gains `bottom: 0` to join the pattern). Scroll-lock sets `overflow: hidden` on **html AND body** (body alone is insufficient — the document element is the scrolling box).
+- **Landscape goes side by side:** in short landscape viewports, a lightbox becomes a grid — the plate dominant at near-full viewport height in its own column, the text demoted to a **side rail** (caption, counter, prev/next, guide toggles) that scrolls internally if it overflows; nothing clips and nothing leaves the frame. Guide overlays are measured against the IMAGE box, not the spread box. Build caution: a media block placed before its base rules in the sheet must out-specify them (prefix its selectors) or lose silently.
+
+## Family-grouped review plates (added 2026-11-21, kit v1.2.5)
+
+When a review page's plates fall into families (Book 2: the E environments / R rooms of REFERENCE-CODES), the page may present them **grouped by family instead of interleaved in story order**: one labeled panel per family, each on a faint per-family tint wash (warm families get distinguishable washes — e.g. sage vs ember at ~7% alpha) with a gold kicker-style sub-header. The lightbox walks the grouped order, extras sheet last. Grouping is per-surface: another surface of the same project (the showcase deck) may keep story order — the codes, not the order, are the shared language.
+
+## One lightbox, several lists; reference decks keep natural aspect (added 2026-11-21, kit v1.2.5)
+
+- **A review page can host several reference decks on ONE shared lightbox** by walking a *current list*: each list keeps its own count noun and end behavior ("Plate N of 13" for plates, "Illustration N of 15" for reference art). Opening a deck swaps the list, not the machinery.
+- **Reference art keeps its natural aspect** in a deck — never the uniform-crop shortcut: the stage height follows the active slide (measured, plus a fixed allowance), so odd-shaped reference images are never cropped to the house ratio.
+- **Print-guide overlays belong to plates only:** reference entries carry a `plain` flag — the lightbox builds them with no seam/Lulu overlays, while plates in the same lightbox keep theirs.
+
+## The take switcher — N takes per slot, data-driven (added 2026-11-21, kit v1.2.5)
+
+A review card that holds several takes of one slot (an adopted plate, a color alternate, a reimagined plate) carries a **take switcher**: ‹ › buttons (real `<button>`s, 44px targets) + a counter reading "Take X of N".
+
+- **Takes are DATA, never markup duplication:** each slot's entry carries an ordered `takes: [...]` list (or a takes map keyed by the slot's code); the counter is always rendered from the list length — the total appears nowhere in markup, script, or styles.
+- **State is per-card and independent,** defaults to Take 1 on load, and does not persist; one card's take never affects a neighbor. A single-take entry (e.g. the extras sheet) gets no switcher.
+- **The lightbox resolves the card's selected take,** so the big view always matches the card — and stepping through the lightbox shows every card at its own selected take; the lightbox caption appends the take context ("· Take 2 of 3").
+- **Adding a take is a data-only change:** one image file + one list entry per surface. (Proven on Book 2: Take 3 — fully reimagined plates for all 12 place slots — wired into both Places surfaces touching nothing but list entries and image files.) A switcher tap must never trigger the host deck's navigation, and only the centered deck slide's switcher stays in the tab order.
+- Switcher buttons hold one fill in every state — no `:hover`-dependent opacity/fill (the locked deck-arrow lesson, PAGE-POLISH).
+
 ## Publish process
 
 1. Start from current `main` and note its sha. Create a branch (`cursor/<short-topic>`). Commit only the files you meant to change.

@@ -20,6 +20,7 @@ Every book project gets one Drive homebase folder, created at project start. Pro
 - **Cast Finals holds masters only.** Working files, candidates, and superseded art never go there. Chat previews and web copies live elsewhere.
 - **Exactly one master per piece in Cast Finals.** A duplicate under a second name is still a duplicate — one stays, the other demotes to Cast — Archive (it is the provenance copy, not a second final).
 - **Working Canonicals is the working set:** the current working-resolution piece for EVERY character in the cast — when a new character's pieces land, they are mirrored here the same pass, or the folder silently stops being the set.
+- **The Drive mirror is part of homing, not a later chore:** every adoption or replacement pass mirrors the adopted pieces to Working Canonicals (and demotes the superseded ones to Cast — Archive) **in the same pass**, recipes to Recipes & Standards, every file **md5-verified** against its local copy. A piece that lives only locally or only in the repo is not homed yet.
 - **Cast — Archive is the demotion shelf.** Anything the project stops using — superseded takes, old tests, stale masters from replaced pieces — moves there instead of being deleted or left scattered in the working folders.
 - **Shared inbox:** ONE Google Doc for all notes between the author and the production side, newest first. The author's side stays light by design — one pending list, never a gate.
 - The homebase is the project's file home. The GitHub repo holds code and public pages, never the manuscript.

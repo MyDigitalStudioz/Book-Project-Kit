@@ -80,6 +80,7 @@ On the live project, two boards shipped built from a reduced brief and gated on 
 1. Every board brief carries the FULL section inventory with counts (head shots 5 · turnaround 4 · details 8 · expressions 8 · actions 8 · palette 8 with measured hexes · size block · key traits · identity checklist · footer) — pasted into the prompt, never summarized from memory.
 2. Before banking or delivering any board, run the LAYOUT DIFF against the exemplar board section by section and state the result. Any missing section = FAIL, regardless of how good the art looks. No delivery without the diff.
 3. The palette hexes are sampled from the character's actual art (portrait/full body/detail tiles) BEFORE the brief is written, and verified digit-exact on the finished board at 3x.
+4. **Orientation check:** the LEFT PROFILE and RIGHT PROFILE head shots must face the directions their labels claim, and so must the turnaround's side views. (Added 2026-11-20, kit v1.2.3 — a commissioned board's first take mirror-reversed BOTH profile pairs against their labels; only the layout diff caught it. The three-pass gate already checks that the two profiles face opposite directions; this extends the check to *matching the labels*, head shots and turnaround alike.)
 
 ## LIKENESS GOVERNANCE — THE PORTRAIT IS THE VERDICT (added 2026-11-20, Jon — the Jon board v3→v4 lesson)
 A board can pass every layout and text check and still be wrong: on the live project, a rebuilt board passed the full grid gate, but Jon rejected it on sight — its faces were a plausible cousin of the man, not the man in the approved locked portrait (narrower face, smaller nose, weaker jaw, thinner beard, muted signature silver). Rules:
@@ -92,3 +93,33 @@ For a character based on a real person, the reference photos have a hierarchy: *
 
 ## BANKING CHECK — VERIFY AN UPLOAD'S BYTES (added 2026-11-20)
 A file that arrives by upload can carry crossed or wrong bytes (observed: an uploaded portrait whose file bytes were an old page screenshot). Before banking any uploaded image into cast, boards, or builds, verify it is the image it claims to be — view it, and when a known copy exists, pixel-diff against it (a same-image diff reads near zero; a wrong file reads an order of magnitude higher). Never bank on filename alone.
+
+## CAST TIERS — BOARDS ARE FOR MAIN CHARACTERS ONLY (added 2026-11-20, kit v1.2.3 — Jon's scoping call on Harlow's Helping Paws)
+Full character boards (the Harlow grid above) are heavy production; they are for **MAIN characters only**. The tiers:
+- **Main characters:** recipe + portrait + full body + full board.
+- **Supporting characters** (the animals especially): a dialed-in recipe + a headshot + a full-body image each. That suffices — supporting cast needs identity consistency in scenes, not a 40-tile sheet.
+- **Groups and families are ONE set, one entry:** a litter, a family, or a bonded group is produced as a single set under a single recipe — one group portrait + one group full body, one showcase card, one cast-census entry — not one set of pieces per member. (Worked examples: the Spice Girls litter set; the Newman Family set — three humans, one portrait, one full body.) A group member who later becomes a main character gets their own pieces then.
+- Boards for real-people supporting characters (Maria, Jon on Book 2) were a fun extra, not the standard for the whole cast — don't let the extra become the expectation.
+
+## PAIR DIFFERENTIATION — JUDGED AT READING SIZE (added 2026-11-20, kit v1.2.3)
+Members of a cast pair never share a pose or angle: each gets a distinct composition and silhouette so they never read as recolors of each other. A marking split on paper is NOT enough — the first Pixie/Spike split (narrow vs wide blaze, cap vs saddle) failed at reading size: both puppies were tan-dominant faces in the same expression family, and the producer read them as one puppy turned around. Differentiate on the signals that survive at thumbnail size:
+1. **Face value mass** — a dark mask vs an open light face (Spike v2's bandit mask vs Pixie's open tan face).
+2. **Ear / marking color mass** — near-black ears vs mahogany-tan.
+3. **Pose and expression family** — level chin + closed grin + sitting full body vs up-tilted pant + standing step.
+Judge the pair check side by side AT READING SIZE on those three signals, never from the recipe text alone. (Origin: Yuki v1 + Raja v1 flagged as "exact copies just different colors"; Yuki was redone near-frontal + reclining.)
+
+## THE FULL-BODY GATE (added 2026-11-20, kit v1.2.3 — the Mira lesson)
+A full body is NOT locked until it passes all three checks, whole-frame, against its own portrait:
+1. **Style verdict first** — the figure must sit in the portrait's painted hand (same planes, same shadow depth, same finish). A flatter, paler, or glossier figure fails even if the outfit is right.
+2. **Measured proportions, stated as a number** — head-to-height units measured on the actual files, compared like-for-like with the portrait's build. The recipe carries the proportion as a NEVER line (e.g. head ≈ 1/7 of height, normal neck length and shoulder width).
+3. **Build check** — never slimmed, never elongated versus the portrait. Anti-beautify applies to bodies, not just faces.
+An eyeball "finish-match" is not a gate. A later localized-edit pass (brows, markings) verifies its own change map but does NOT re-certify the underlying figure — on the live project a warped full body (6.0 stretched head-units, long neck, narrow shoulders, wrong finish) survived three passes exactly that way, because every pass checked only its own change. When a figure fails the gate, the fix is **regeneration governed directly by the portrait** (portrait attached as face + style authority, the failed figure attached as pose reference only, marked DO NOT COPY for proportions and finish) — never a patch, never a face paste onto a wrong skeleton. First application of the gate as a standalone pass: the cast-wide audit (every adopted full body side-by-side against its portrait: style → proportions → identity/locks) — run it whenever a figure is questioned, and spot-run it before the end-of-cast hi-res batch.
+
+## MARKINGS — TERMINAL SHAPES READ AS SYMBOLS (added 2026-11-20, kit v1.2.3 — the Spike blaze lesson)
+A marking that ends in a defined shape — a patch, a block, a cap, a star — reads as an emblem or symbol, not as fur. Stripe and blaze ends **taper, split into hair-fine strands, and fade/feather out into the coat**; recipes state this explicitly in the NEVER CHANGE block (e.g. "tapers, splits into hair-fine strands, and fades into the dark fur — no terminal patch, block, or symbol"). A designed mark must also trace to the author's text or be flagged as a designer invention at presentation (see MASTER-PROCESS §10) — a forehead star the author never wrote survived two versions before anyone asked where it came from.
+
+## CARRYING AN ADOPTED REFINEMENT ONTO THE BOARD (added 2026-11-20, kit v1.2.3 — the Mira brow carry-over)
+When a trait refinement is adopted on a canonical pair (brows slimmed, a marking changed), it carries onto the character's board in the same adoption pass:
+- **One tight crop per face** through the image lane, composited back under a feathered trait-neighborhood mask, with a per-face change map and a whole-board change map proving zero pixels changed outside the trait neighborhoods (+ any re-typeset text band). A single multi-face STRIP edit fails: the model redraws the whole strip at different dimensions and garbles panel text.
+- **Faces too small to carry the trait** (turnaround and size-figure faces where the trait is a 2–4 px dash) are **reported, not forced** — stated plainly in the adoption record.
+- **Printed text that quotes the trait is re-typeset in the board's own lettering in the same pass** ("full brows" → "slim, softly arched brows"). A stale printed trait line is a defect on the same footing as stale art.

@@ -167,6 +167,12 @@ The flipbook18.html freeze was lifted 2026-11-01. Lois views gold pages. Do not 
 
 ~~The standing spec says never upload `pages-data.js`.~~ The gold-v8 build note records that file in the published set (43,894,925 bytes at that publish), and the viewer loads it before the book starts so each turn does not fetch a JPEG. That is the flicker fix, written in the gold-v8 HTML. The spec sentence has not been revised. Shipped practice is: the viewer set includes `pages-data.js`.
 
+**Bookshelf (multi-book viewer) rules — added 2026-11-20, kit v1.2.3, from the Book 2 shelf.** The Book 2 fork shelves several books in one viewer (story book, cast book, spread mockup, prior series books). Three rules govern it:
+
+- **Shelf tile identity:** a book's shelf tile must always show **that book's own cover**. Each catalog entry's `cover` field must name the book's own cover file — audit it whenever a cover page is added or changed (the live defect: a real-cover fix registered the new cover as the entry's first page but never updated `cover`, which still pointed at another book's front page). Cover resolution must **never branch on which book is open** — one resolution path for open and closed books alike. The flipbook probe cycle must include a **return-to-shelf tile-identity assertion for every book** (open → page → return, tile checked before AND after), not just open-and-turn checks; a cached wrong thumbnail self-heals only when its stored source no longer matches the resolved one.
+- **Curated shelf order:** the catalog order is the shipped default and is curated (the producer sets which book leads). A per-device saved arrangement (the reader's own rearrange controls) still wins on that device, by design — never mistake a device-local order for the shipped default, and never "fix" the catalog to match one device.
+- **Spread-view pattern (`flatPairs`):** a spread book that must also read page-wise in portrait registers as half-pages (each spread split at its center seam) with a flag that pads the pairing at runtime. Runtime blanks belong at the **back only**, as the endpaper. **The front slot is a real cover page, never a blank** — a book opens on its cover, and page 1 is a real page a reader can page back to. (The first build padded the front with a blank and stepped past it on open; paging back landed on a blank "Page 1" — the defect this rule exists to prevent.)
+
 ---
 
 ## 7. File architecture

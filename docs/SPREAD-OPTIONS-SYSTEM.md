@@ -110,6 +110,14 @@ The tie-break baseline lives only in `favorites.json` → `showing` (seeded 2026
 
 A reference copy of the rules in Python is at `/workspace/haj-batch/tmp/showcase_pick.py` on the box (`python3 showcase_pick.py <repo path>` prints the expected pick per spread; use it to refresh `showing`).
 
+## Review lightbox guides (added 2026-11-20, kit v1.2.3 — from Book 2's review pages)
+
+The review lightbox carries two independent guide toggles, inherited from Book 1's Final Pass pages and loved by the author — keep them on every review page version:
+
+- **Seam guide:** an amber band spanning 44–56% of the spread width plus a dashed center line — shows what falls into the fold.
+- **Lulu guide:** taken from the flipbook viewer's own print spec — trim at the page edge, safety frame at 0.5 in (5.88% inset on the square page).
+- A **shared page-settings panel** (guides + captions) sits over the review pages, with settings **persisted per device** — the author sets her guides once and they stay set.
+
 ## Publish process
 
 1. Start from current `main` and note its sha. Create a branch (`cursor/<short-topic>`). Commit only the files you meant to change.

@@ -29,6 +29,7 @@ Background only: golden warm-ivory wash ≈ RGB 252, 224, 184, faint grounding s
 
 ## Briefing discipline (standing)
 - Every spread/board brief attaches this character's canonical portrait (+ board once it exists) and pastes the NEVER CHANGE lines VERBATIM. Never brief from a paraphrase sheet or from memory.
+- The NEVER CHANGE block states the character's **full-body proportion as a number** (head ≈ 1/N of height, normal neck length and shoulder width, never slimmed, never elongated) — a full body locks only through the full-body gate in docs/CHARACTER-BOARD-STANDARD.md.
 - If two approved sources conflict, flag it to Jon BEFORE generating.
 - Hi-res deliverables are real AI upscales (Topaz High Fidelity V2, face enhancement OFF) — never a plain resize.
 - Boards follow docs/CHARACTER-BOARD-STANDARD.md, including the footer line:

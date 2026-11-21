@@ -10,6 +10,10 @@ The per-book Muse dashboard, specified from the Harlow's Helping Paws dashboard 
 - **Links** — every project destination, categorized (Repo · Manuscript · Bridge · Drive · Showcase · Bookshelf · Review · Reference). Every row carries a working URL from day one; audit all rows after any build pass.
 - **Notes** — the project log, newest first: locks, milestones, shipped changes, with author + category.
 
+## Scenes — environment plates home here (added 2026-11-20, kit v1.2.3)
+- **Environment plates home as dashboard scenes.** A produced location plate (a lobby, a shelter room) is recorded as a scene entry (`addscene`) with its art — the dashboard is the record of the book's spaces. Character surfaces stay characters-only in the cast book; the showcase presents adopted scenes as place cards (see PAGE-POLISH).
+- **Two-space governance:** when one location has two canonical spaces, they carry **distinct names** ("The Snuggle Inn — Fireside Lobby" vs "The Snuggle Inn — Welcome Lobby"), never one shared "Lobby". **Scene briefs must name which space they use** — a brief that just says "the lobby" is incomplete — and **features never migrate between the rooms** (no fireplace in the Welcome Lobby; the Welcome Lobby's pen field stays out of the Fireside plate).
+
 ## Chrome (same as the web pages)
 - Slim sticky top bar with ONE ☰ button opening a slide-in menu: the same destinations in the same order as the showcase/review menus (bookshelf link in gold first), with the dashboard marked "you're here", plus links to the dashboard's own sections.
 - Fade-in back-to-top button.
